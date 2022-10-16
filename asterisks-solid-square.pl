@@ -32,9 +32,16 @@ if (@ARGV==1) {
 	$n=$ARGV[0];
 }
 
-for (my $i=0; $i<$n; $i++) {
-	for (my $j=0; $j<$n; $j++) {
-		print '*';
+our sub square {
+	my ($n)=@_;
+	my $result="";
+	for (my $i=0; $i<$n; $i++) {
+		for (my $j=0; $j<$n; $j++) {
+			$result=$result."*";
+		}
+		$result=$result."\n";
 	}
-	print "\n";
+	return $result;
 }
+
+print square($n);
