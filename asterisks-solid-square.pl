@@ -45,3 +45,11 @@ our sub square {
 }
 
 print square($n);
+
+
+
+
+use Test::More tests => 2;                                                                                                                                                                                                        
+
+is(square(3), "***\n***\n***\n", "3 square");                                                                                                                                                                                    
+is(square(0), "", "empty square");     
