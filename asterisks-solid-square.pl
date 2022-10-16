@@ -23,7 +23,8 @@
 use strict;
 use warnings;
 use utf8;
-use AsterisksShapes;
+
+use AsterisksShape;
 
 die 'Must be less 2 parameters' if (@ARGV>1);
 

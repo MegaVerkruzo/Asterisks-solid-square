@@ -1,12 +1,18 @@
+#!/usr/bin/perl
+
 package AsterisksShapes;
 
-BEGIN {
-	use Exporter();
-	@ISA="Exporter";
-	@EXPORT="&square";
-}
+use strict;
+use warnings;
+
+use Exporter;
+
+our @ISA = qw(Exporter);
+our @EXPORT = qw(square);
+
+
 sub square {
-	my $n=$@_[0];
+	my ($n)=@_;
 	my $result="";
 	for (my $i=0; $i<$n; $i++) {
 		for (my $j=0; $j<$n; $j++) {
@@ -16,5 +22,5 @@ sub square {
 	}
 	return $result;
 }
+
 return 1;
-END {   }
