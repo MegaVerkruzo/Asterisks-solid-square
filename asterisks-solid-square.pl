@@ -23,6 +23,7 @@
 use strict;
 use warnings;
 use utf8;
+use AsterisksShapes;
 
 die 'Must be less 2 parameters' if (@ARGV>1);
 
@@ -32,9 +33,4 @@ if (@ARGV==1) {
 	$n=$ARGV[0];
 }
 
-for (my $i=0; $i<$n; $i++) {
-	for (my $j=0; $j<$n; $j++) {
-		print '*';
-	}
-	print "\n";
-}
+print square($n);
