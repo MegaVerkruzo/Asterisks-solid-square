@@ -24,12 +24,15 @@ use strict;
 use warnings;
 use utf8;
 
+use Scalar::Util qw(looks_like_number);
+
 die 'Must be less 2 parameters' if (@ARGV>1);
 
 my $n=0;
 if (@ARGV==1) {
 	die 'N must be >= 0' if ($ARGV[0]<0);
 	$n=$ARGV[0];
+	die 'N must be number' if (!looks_like_number($n));
 }
 
 our sub square {
@@ -49,7 +52,8 @@ print square($n);
 
 
 
-use Test::More tests => 2;                                                                                                                                                                                                        
+use Test::More tests => 3;
 
 is(square(3), "***\n***\n***\n", "3 square");                                                                                                                                                                                    
 is(square(0), "", "empty square");     
+is(square("a"), "", "wrong square");
